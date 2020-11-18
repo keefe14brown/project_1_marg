@@ -1,3 +1,59 @@
-* {
-    background-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.title {
+    color: orange;
+    font-weight: 900;
+    text-align: center;
+    font-size: 500%;
 }
+
+body {
+    background-image: url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iE0BNpkKOeE0/v0/-1x-1.png);
+    font-family: "Open Sans", sans-serif;
+    background-size: cover;
+}
+
+.modal {
+    background-color: darkred;
+    padding: 30px;
+    width: 50vw;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    top: 45%;
+    transform: translateY(-45%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+  }
+  
+  .modal.open {
+    display: block;
+  }
+
+  .carousel {
+    background-color: forestgreen;
+    padding: 30px;
+    width: 50vw;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    top: 45%;
+    transform: translateY(-45%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: none;
+  }
+  
+  .carousel.open {
+    display: block;
+  }
+  
+  .carousel img {
+    width: 100%;
+  }
+  
