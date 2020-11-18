@@ -1,4 +1,4 @@
-console.log('yes Im connected');
+/////******* */Create querySelectors for all the buttons ********* /////
 
 const modal = document.querySelector(".modal");
 const carousel = document.querySelector('.carousel');
@@ -8,6 +8,7 @@ const carouselPrevious = document.querySelector('.carousel-previous');
 const carouselSelect = document.querySelector('.carousel-select');
 const getStarted = document.querySelector('.get-started');
 
+//////BUILD MODAL AND CAROUSEL///////  
 const backgroundImages = [
     "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/im7INtlYerIc/v0/-1x-1.jpg",
     "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iE0BNpkKOeE0/v0/-1x-1.png",
@@ -53,7 +54,7 @@ const openCarousel = () => {
 }
 
 /* =============================
-EVENT LISTENERS
+        EVENT LISTENERS
 ============================= */
 
 beginButton.addEventListener("click", togglemodal);
