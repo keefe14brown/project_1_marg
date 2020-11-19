@@ -5,6 +5,8 @@
     font-weight: 900;
     text-align: center;
     font-size: 500%;
+    margin: 0 auto;
+    text-shadow: darkslategrey;
 }
 
 body {
@@ -16,12 +18,12 @@ body {
 .modal {
     background-color: darkred;
     padding: 30px;
-    width: 50vw;
+    width: 30vw;
     max-width: 500px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 10px;
     position: fixed;
-    top: 45%;
+    top: 50%;
     transform: translateY(-45%);
     left: 0;
     right: 0;
@@ -41,7 +43,7 @@ body {
     text-align: center;
     border-radius: 4px;
     position: fixed;
-    top: 45%;
+    top: 50%;
     transform: translateY(-45%);
     left: 0;
     right: 0;
