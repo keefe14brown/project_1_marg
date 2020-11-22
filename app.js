@@ -1,6 +1,8 @@
 /////******* */Create querySelectors for all the buttons ********* /////
 const startGame = document.querySelector('.start-game');
-const modal = document.querySelector('.modal');
+const modal1 = document.querySelector('.modal1');
+const modal2 = document.querySelector('.modal2');
+const modal3 = document.querySelector('.modal3');
 const carousel = document.querySelector('.carousel');
 const carouselImage = document.querySelector(".carousel img");
 const carouselNext = document.querySelector('.carousel-next');
@@ -8,8 +10,11 @@ const carouselPrevious = document.querySelector('.carousel-previous');
 const carouselSelect = document.querySelector('.carousel-select');
 const workButton = document.querySelector('.workbutton');
 const propertyButton = document.querySelector('.buy');
-
+const sabotageButton = document.querySelector('.sabotage');
+const continueButton1 = document.querySelector('.continue1');
+const continueButton2 = document.querySelector('.continue2');
 //////BUILD MODAL AND CAROUSEL///////  
+
 const backgroundImage = [
     "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/im7INtlYerIc/v0/-1x-1.jpg",
     "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iE0BNpkKOeE0/v0/-1x-1.png",
@@ -18,8 +23,18 @@ const backgroundImage = [
 
 let slideIndex = 0;
 
-const togglemodal = () => {
-    modal.classList.toggle("open");
+const togglemodal1 = () => {
+    modal1.classList.toggle("open");
+}
+
+const togglemodal2 = () => {
+    modal2.classList.toggle("open");
+    modal1.remove();
+}
+
+const togglemodal3 = () => {
+    modal3.classList.toggle("open");
+    modal2.remove();
 }
 
 const updateCarouselImage = () => {
@@ -49,10 +64,14 @@ const updateBackground = () => {
 const body = document.querySelector('body');
 body.style.backgroundImage = `url(${backgroundImage[slideIndex]})`;
 carousel.remove();
+playerOne.render();
+playerTwo.render();
 }
 
 const openCarousel = () => {
-    togglemodal();
+    togglemodal1();
+    togglemodal2();
+    togglemodal3();
     carousel.classList.add('open');
 }
 
@@ -60,22 +79,32 @@ const openCarousel = () => {
 //////***/ CREATE CLASS CONSTRUCTORS FOR THE CHARACTERS***\\\\
 //////***/ AND THE CHRACTER CAREERS/ATTRIBUTES. \***\\\\\\\\\\\\\\\\\\\\\\\\
 
-class player {
-    constructor(name, career, property, wallet){
-        this.name = name;
-        this.career = career;
-        this.property = "";
-        this.wallet = 0;
-    }
-} 
+let playerOne = {
+        name: 'Johnny Good Guy',
+        career: [],
+        property: [],
+        wallet: 0,
+}; 
+let playerTwo = {
+    name: 'sketchy Todd',
+    career: [],
+    property: [],
+    wallet: 0,
+};
 
-class property {
-    constructor(type, price, value){
-        this.type = type;
-        this.price = price;
-        this.value = value;
-    }
-}
+const house = {
+    name: ' Kardashian Mansion',
+    price: 1000000,
+    location: 'Hidden Hills, CA',
+};
+
+// class property {
+//     constructor(type, price, value){
+//         this.type = type;
+//         this.price = 0;
+//         this.value = value;
+//     }
+// }
 
 class Career {
     constructor(name, description, income, id){
@@ -104,23 +133,36 @@ const careerDescriptions = [
     }
 ]
 const careerIncomes = [
- 7000,
- 7500,
- 8000,
- 8500,
- 9000,
- 9500,
- 10000
+ 18750,
+ 19500,
+ 19750,
+ 18500,
+ 19600,
+ 20000,
+ 17750,
+ 18350,
+ 19000,
+ 20100,
+ 21000,
+ 18000,
+ 17900,
+ 19999,
+ 19200,
+ 20202,
+ 19460,
+ 21500,
+ 21650
 ];
 const careers = [];
 
-const playerOne = new player('Joe Shmoe', 0, "", 0)
-const playerTwo = new player('player 2', 0, 0, 0)
+// const playerOne = new player('Joe Shmoe', 0, "", 0)
+// const playerTwo = new player('player 2', 0, 0, 0)
+console.log(playerOne);
 
-player
 
-const Car = new property('New Convertible', 40000, 25000)
-const house = new property('Buckhead Mansion', 1000000, 1000000)
+// const Car = new property('New Convertible', 40000, 25000)
+// const house = new property('Buckhead Mansion', 1000000, 1000000)
+// console.log(house);
 
 ////=======CHARACTER STAT FUNCTIONS===========\\\\
 //////////////////////////////////////////////////
@@ -137,46 +179,88 @@ const randomization = (limit) => {
    playerOne.career = careers[randomization(careers.length)]
    playerTwo.career = careers[randomization(careers.length)]
 
-   playerOne.el = document.getElementById('Joe Schmoe');
+   playerOne.el = document.getElementById('JoeSchmoe');
 
 playerOne.render = () => {
     playerOne.el.innerHTML = `
     <h1>${playerOne.name}</h1>
-    <h3> Current skill: ${playerOne.career.name} </h3>
-    <h3>${playerOne.name} current income: ${playerOne.career.income}</h3>
-    <h3> Currently ${playerOne.name} has ${playerOne.wallet} in the bank</h3>
+    <h3>Current Career: ${playerOne.career.name} </h3>
+    <h3>Current income: $${playerOne.career.income}</h3>
+    <h3> Currently ${playerOne.name} has $${playerOne.wallet} in the bank</h3>
     <div> <h2>Properties:</h2> 
-    <ul>${playerOne.property}
-    <li>${playerOne.name} currently owns a: ${property.type} <br>
-    Current worth: ${property.value} 
+    <ul>
+    <li>${playerOne.property}
             </li></ul>
     </div>`;
 }
 
-playerOne.render();
-
 const goToWorkButton = document.querySelector('.gotowork');
    goToWorkButton.addEventListener('click', () => {
     playerOne.wallet += playerOne.career.income;
+    playerTwo.wallet += playerTwo.career.income;
     playerOne.render();
+    playerTwo.render();
+    sabotagePlayerOne();
 })
 
 propertyButton.addEventListener('click', ()=>{
-    if(barbie.wallet >= property.price){
-        playerOne.property.push(playerOne.property);
-        playerOne.wallet = playerOne.wallet - property.price;
-        barbie.render();
-        
+    if(playerOne.wallet >= house.price){
+        playerOne.property.push(house.name);
+        playerOne.wallet = playerOne.wallet - house.price;
+        playerOne.render();
+        alert("CONGRATULATION!!!! You won the house!")
+    
     } else {
         alert("You know you don't have enough bread! cut it out!");
     }
 })
 
+const sabotageAmounts = [10000, 35000, 5000, 50000, 17000, 8000, 21000, 1500, 800, 18000, 11000, 33333, 4267];
+
+const sabotageHit = sabotageAmounts[randomization(sabotageAmounts.length)];
+
+sabotageButton.addEventListener('click', ()=>{
+    if(playerTwo.wallet === playerTwo.wallet){
+        playerTwo.wallet = playerTwo.wallet - sabotageHit;
+        playerTwo.render();
+        alert('You have SABOTAGED your opponent!!!');
+    }
+})    
+const sabotagePlayerOne = () => {
+if(Math.random() >= .8){
+    playerOne.wallet = playerOne.wallet - sabotageHit;
+    playerOne.render();
+    alert('Damn It! your business was SABOTAGED by your opponent!!!');
+    }
+}
+
+//=================================================//
+///////CREATE THE INTERACTIONS CPU//////////////////
+//================================================//
+playerTwo.el = document.getElementById('SketchyTodd')
+
+playerTwo.render = () => {
+    playerTwo.el.innerHTML = `
+    <h1>${playerTwo.name}</h1>
+    <h3> Current Career: ${playerTwo.career.name} </h3>
+    <h3>Current income: $${playerTwo.career.income}</h3>
+    <h3> Currently ${playerTwo.name} has $${playerTwo.wallet} in the bank</h3>
+    <div> <h2>Properties:</h2> 
+    <ul>
+    <li>${playerTwo.property}
+            </li></ul>
+    </div>`;
+}
+
+
+
 /* =============================
         EVENT LISTENERS
 ============================= */
 
-startGame.addEventListener('click', togglemodal);
+startGame.addEventListener('click', togglemodal1);
+continueButton1.addEventListener('click', togglemodal2);
+continueButton2.addEventListener('click', togglemodal3);
 workButton.addEventListener("click", openCarousel);
 carouselNext.addEventListener('click', changeSlideNext);
 carouselPrevious.addEventListener('click', changeSlidePrevious);

@@ -9,13 +9,68 @@
     text-shadow: darkslategrey;
 }
 
+.start-game {
+  background-color: darkred;
+  color: orange;
+  text-shadow: midnightblue;
+  font-size: 20px;
+  border-radius: 16px;
+  margin-left: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.start-game:hover {
+  background-color: whitesmoke;
+  color: midnightblue;
+  border: 2px orange;
+}
+
 body {
     background-image: url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iE0BNpkKOeE0/v0/-1x-1.png);
     font-family: "Open Sans", sans-serif;
     background-size: cover;
 }
+.modal1 {
+  background-color: orange;
+  padding: 30px;
+  width: 50vw;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-45%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+}
 
-.modal {
+.modal1.open {
+  display: block;
+}
+
+.modal2 {
+  background-color: orange;
+  padding: 30px;
+  width: 50vw;
+  max-width: 600px;
+  text-align: center;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-45%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+}
+
+.modal2.open {
+  display: block;
+}
+
+.modal3 {
     background-color: darkred;
     padding: 30px;
     width: 30vw;
@@ -31,7 +86,7 @@ body {
     display: none;
   }
   
-  .modal.open {
+  .modal3.open {
     display: block;
   }
 
@@ -59,5 +114,19 @@ body {
     width: 100%;
   }
 
-  /**CREATE CHARACTERS AND  ANIMATE THEM**\
+  #JoeSchmoe {
+    float: left;
+    color: orange;
+    text-shadow: 4px darkred;
+    font-size: 100%;
+  }
+  #SketchyTodd {
+    float: right;
+    color: orange;
+    text-shadow: 4px darkred;
+    font-size: 100%;
+  }
+
   
+
+  /**CREATE CHARACTERS AND  ANIMATE THEM**\
