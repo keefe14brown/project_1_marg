@@ -166,6 +166,7 @@ console.log(playerOne);
 
 ////=======CHARACTER STAT FUNCTIONS===========\\\\
 //////////////////////////////////////////////////
+
 const randomization = (limit) => {
     return Math.floor(Math.random() * limit)
    }
@@ -201,6 +202,7 @@ const goToWorkButton = document.querySelector('.gotowork');
     playerOne.render();
     playerTwo.render();
     sabotagePlayerOne();
+    gameOver();
 })
 
 propertyButton.addEventListener('click', ()=>{
@@ -227,10 +229,18 @@ sabotageButton.addEventListener('click', ()=>{
     }
 })    
 const sabotagePlayerOne = () => {
-if(Math.random() >= .8){
+if(Math.random() >= .96){
     playerOne.wallet = playerOne.wallet - sabotageHit;
     playerOne.render();
     alert('Damn It! your business was SABOTAGED by your opponent!!!');
+    }
+}
+
+const gameOver = () => {
+    if ((playerOne.wallet >= 1000000) && (1000000 > playerTwo.wallet)){
+        alert('CONGRATULATIONS!!!! YOU WON!!!')  
+    } else if((playerTwo.wallet >= 1000000) && (1000000 > playerOne.wallet)){
+        alert('OH NO!!!! YOU LOST THE GAME!!!');
     }
 }
 
