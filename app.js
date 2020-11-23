@@ -17,6 +17,8 @@ const saleButton = document.querySelector('.sale');
 //////BUILD MODAL AND CAROUSEL///////  
 
 const backgroundImage = [
+    "https://images-na.ssl-images-amazon.com/images/S/pv-target-images/ddc674a1c76d036eaa445b672c313ca63abf03e686b8e5cd62fe5f58e1c72f25._RI_V_TTW_.jpg",
+    "https://i.ytimg.com/vi/DKtjBqJ4NxA/maxresdefault.jpg",
     "https://blackgirlnerds.com/wp-content/uploads/2018/12/0_Fazot7V2AEFV6kNJ.jpg",
     "https://i.redd.it/3st0k7nrdad21.jpg",
     "https://cdn.vox-cdn.com/thumbor/C7ddh7Idh3Aa0yA91xQUf5GwGWE=/0x0:2000x1333/1200x800/filters:focal(840x507:1160x827)/cdn.vox-cdn.com/uploads/chorus_image/image/60793985/171109_07_08_31_5DR21719.0.jpg",
