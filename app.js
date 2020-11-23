@@ -13,12 +13,18 @@ const propertyButton = document.querySelector('.buy');
 const sabotageButton = document.querySelector('.sabotage');
 const continueButton1 = document.querySelector('.continue1');
 const continueButton2 = document.querySelector('.continue2');
+const saleButton = document.querySelector('.sale');
 //////BUILD MODAL AND CAROUSEL///////  
 
 const backgroundImage = [
+    "https://i.redd.it/3st0k7nrdad21.jpg",
+    "https://cdn.vox-cdn.com/thumbor/C7ddh7Idh3Aa0yA91xQUf5GwGWE=/0x0:2000x1333/1200x800/filters:focal(840x507:1160x827)/cdn.vox-cdn.com/uploads/chorus_image/image/60793985/171109_07_08_31_5DR21719.0.jpg",
+    "https://s7d2.scene7.com/is/image/TWCNews/ap_19115548990694editedjpg",
+    "https://i.insider.com/5e0bbdec855cc2746e2742c2?width=1200&format=jpeg",
     "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/im7INtlYerIc/v0/-1x-1.jpg",
     "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iE0BNpkKOeE0/v0/-1x-1.png",
-    "https://i.redd.it/3st0k7nrdad21.jpg"
+    "https://barrybowe.com/wp-content/uploads/2020/02/20-Trading-Places-Trailer-1200x540.jpg",
+    "https://www.ruthlessreviews.com/wp-content/uploads/2018/12/trading-places-3.jpg"
 ];
 
 let slideIndex = 0;
@@ -80,22 +86,22 @@ const openCarousel = () => {
 //////***/ AND THE CHRACTER CAREERS/ATTRIBUTES. \***\\\\\\\\\\\\\\\\\\\\\\\\
 
 let playerOne = {
-        name: 'Johnny Good Guy',
+        name: 'Billy Ray Valentine',
         career: [],
         property: [],
         wallet: 0,
 }; 
 let playerTwo = {
-    name: 'sketchy Todd',
+    name: 'Louis Winthorpe',
     career: [],
     property: [],
     wallet: 0,
 };
 
 const house = {
-    name: ' Kardashian Mansion',
+    name: 'The Waldorf Mansion',
     price: 1000000,
-    location: 'Hidden Hills, CA',
+    location: 'Scarsdale, NY',
 };
 
 // class property {
@@ -185,12 +191,12 @@ const randomization = (limit) => {
 playerOne.render = () => {
     playerOne.el.innerHTML = `
     <h1>${playerOne.name}</h1>
-    <h3>Current Career: ${playerOne.career.name} </h3>
-    <h3>Current income: $${playerOne.career.income}</h3>
-    <h3> Currently ${playerOne.name} has $${playerOne.wallet} in the bank</h3>
+    <h3>Current Career: <span style="color:red;">${playerOne.career.name}</span> </h3>
+    <h3>Current income: <span style="color:red;">$${playerOne.career.income}</span></h3>
+    <h3> Currently ${playerOne.name} has <span style="color:red;">$${playerOne.wallet}</span> banked</h3>
     <div> <h2>Properties:</h2> 
     <ul>
-    <li>${playerOne.property}
+    <li><span style="color:green;">${playerOne.property}</span>
             </li></ul>
     </div>`;
 }
@@ -203,6 +209,7 @@ const goToWorkButton = document.querySelector('.gotowork');
     playerTwo.render();
     sabotagePlayerOne();
     gameOver();
+    playerTwoSale();
 })
 
 propertyButton.addEventListener('click', ()=>{
@@ -225,22 +232,37 @@ sabotageButton.addEventListener('click', ()=>{
     if(playerTwo.wallet === playerTwo.wallet){
         playerTwo.wallet = playerTwo.wallet - sabotageHit;
         playerTwo.render();
+    
         alert('You have SABOTAGED your opponent!!!');
     }
 })    
 const sabotagePlayerOne = () => {
-if(Math.random() >= .96){
+if(Math.random() >= .97){
     playerOne.wallet = playerOne.wallet - sabotageHit;
     playerOne.render();
     alert('Damn It! your business was SABOTAGED by your opponent!!!');
     }
 }
-
+saleButton.addEventListener('click', ()=>{
+    if(playerOne.wallet === playerOne.wallet){
+        playerOne.wallet = playerOne.wallet + sabotageHit;
+        playerOne.render();
+        alert('You Had a successful merch sale this weekend! Great Work!!!');
+    }
+})
+const playerTwoSale = () => {
+    if(Math.random() >= .95){
+        playerTwo.wallet = playerTwo.wallet + sabotageHit;
+        playerTwo.render();
+        alert('Your opponent had a big sale this weekend! He is making a move!!!');
+        }
+    }
 const gameOver = () => {
     if ((playerOne.wallet >= 1000000) && (1000000 > playerTwo.wallet)){
         alert('CONGRATULATIONS!!!! YOU WON!!!')  
     } else if((playerTwo.wallet >= 1000000) && (1000000 > playerOne.wallet)){
         alert('OH NO!!!! YOU LOST THE GAME!!!');
+        myButton();
     }
 }
 
@@ -252,12 +274,12 @@ playerTwo.el = document.getElementById('SketchyTodd')
 playerTwo.render = () => {
     playerTwo.el.innerHTML = `
     <h1>${playerTwo.name}</h1>
-    <h3> Current Career: ${playerTwo.career.name} </h3>
-    <h3>Current income: $${playerTwo.career.income}</h3>
-    <h3> Currently ${playerTwo.name} has $${playerTwo.wallet} in the bank</h3>
+    <h3> Current Career: <span style="color:red;">${playerTwo.career.name}</span> </h3>
+    <h3>Current income: <span style="color:red;">$${playerTwo.career.income}</span></h3>
+    <h3> Currently ${playerTwo.name} has <span style="color:red;">$${playerTwo.wallet}</span> banked</h3>
     <div> <h2>Properties:</h2> 
     <ul>
-    <li>${playerTwo.property}
+    <li><span style="color:green;">${playerTwo.property}</span>
             </li></ul>
     </div>`;
 }

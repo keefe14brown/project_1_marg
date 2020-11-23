@@ -4,9 +4,46 @@
     color: orange;
     font-weight: 900;
     text-align: center;
-    font-size: 500%;
+    font-size: 550%;
     margin: 0 auto;
-    text-shadow: darkslategrey;
+    text-shadow: 3px 3px darkslategrey;
+}
+
+.gotowork {
+  background-color: orange;
+  color: darkred;
+  font-size: 16px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.buy {
+  background-color: orange;
+  color: darkred;
+  font-size: 16px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.sabotage {
+  background-color: orange;
+  color: darkred;
+  font-size: 16px;
+  border-radius: 18px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
+
+.sale {
+  background-color: orange;
+  color: darkred;
+  font-size: 16px;
+  border-radius: 18px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .start-game {
@@ -25,8 +62,18 @@
   border: 2px orange;
 }
 
+.resetgame {
+  background-color: blue;
+  color: forestgreen;
+  font-size: 18px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
 body {
-    background-image: url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iE0BNpkKOeE0/v0/-1x-1.png);
+    background-image: url(https://barrybowe.com/wp-content/uploads/2020/02/20-Trading-Places-Trailer-1200x540.jpg);
     font-family: "Open Sans", sans-serif;
     background-size: cover;
 }
@@ -117,14 +164,16 @@ body {
   #JoeSchmoe {
     float: left;
     color: orange;
-    text-shadow: 4px darkred;
+    text-shadow: 2px 2px black;
     font-size: 100%;
+    text-align: center;
   }
   #SketchyTodd {
     float: right;
     color: orange;
-    text-shadow: 4px darkred;
+    text-shadow: 2px 2px black;
     font-size: 100%;
+    text-align: center;
   }
 
   .background-music {
