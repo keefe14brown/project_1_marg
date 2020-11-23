@@ -9,7 +9,7 @@ const carouselNext = document.querySelector('.carousel-next');
 const carouselPrevious = document.querySelector('.carousel-previous');
 const carouselSelect = document.querySelector('.carousel-select');
 const workButton = document.querySelector('.workbutton');
-const propertyButton = document.querySelector('.buy');
+const buyButton = document.querySelector('.buy');
 const sabotageButton = document.querySelector('.sabotage');
 const continueButton1 = document.querySelector('.continue1');
 const continueButton2 = document.querySelector('.continue2');
@@ -17,6 +17,7 @@ const saleButton = document.querySelector('.sale');
 //////BUILD MODAL AND CAROUSEL///////  
 
 const backgroundImage = [
+    "https://blackgirlnerds.com/wp-content/uploads/2018/12/0_Fazot7V2AEFV6kNJ.jpg",
     "https://i.redd.it/3st0k7nrdad21.jpg",
     "https://cdn.vox-cdn.com/thumbor/C7ddh7Idh3Aa0yA91xQUf5GwGWE=/0x0:2000x1333/1200x800/filters:focal(840x507:1160x827)/cdn.vox-cdn.com/uploads/chorus_image/image/60793985/171109_07_08_31_5DR21719.0.jpg",
     "https://s7d2.scene7.com/is/image/TWCNews/ap_19115548990694editedjpg",
@@ -212,7 +213,7 @@ const goToWorkButton = document.querySelector('.gotowork');
     playerTwoSale();
 })
 
-propertyButton.addEventListener('click', ()=>{
+buyButton.addEventListener('click', ()=>{
     if(playerOne.wallet >= house.price){
         playerOne.property.push(house.name);
         playerOne.wallet = playerOne.wallet - house.price;
@@ -283,8 +284,6 @@ playerTwo.render = () => {
             </li></ul>
     </div>`;
 }
-
-
 
 /* =============================
         EVENT LISTENERS
