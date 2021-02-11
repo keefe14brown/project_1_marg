@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Keefe Brown | GitHub portfolio page</title>
+    <title>Keefe Brown | Portfolio</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/98f1672b4f.js" crossorigin="anonymous"></script>
@@ -17,6 +16,7 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:300,400" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,12 +27,63 @@
     <![endif]-->
 
     <style>
-      
+
       h1, h2, h3, h4, h5{
-        color:#4A4E69;
         font-weight: 300;
         font-family: 'Open Sans', sans-serif;
       }
+
+      p {
+        font-weight: 300;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      hr {
+        max-width: 300px;
+        width: 80%;
+        margin-left: 0;
+      }
+
+      /* Begin dark mode specific styles */ 
+      body {
+        background-color: #38444b;
+      }
+
+      hr {
+        border-color: #565656;
+      }
+
+      h1, h2, h3, h4, h5, p {
+        color: rgb(237, 237, 237)
+      }
+
+      a {
+        color: rgb(208, 208, 208);
+      }
+
+      a:hover,
+      a:focus,
+      a:active {
+        color:white;
+      }
+
+      .tech-items i {
+        opacity: 1;
+        color:white !important;
+      }
+
+      .tech-items i:hover {
+        color: initial;
+      }
+      /* END dark mode specific styles */
+      
+      /* Begin light mode specific styles */
+      /* h1, h2, h3, h4, h5{
+        color: #3a3a3a;
+        font-weight: 300;
+        font-family: 'Open Sans', sans-serif;
+      }
+
 
       p {
         color: #4A4E69;
@@ -40,54 +91,70 @@
         font-family: 'Open Sans', sans-serif;
       }
 
-      section {
-        width:100%;
-        margin: 40px 0;
-        padding: 0 5%;
+      .socialLinks a {
+        color: #c3c3c3;
+      }*/
+      
+      /* END light mode specific styles */
+
+      h2 {
+        font-weight: 100;
+      }
+
+      a {
+        font-weight: bold;
+      }
+
+      .container {
+        max-width:960px;
+      }
+
+      .animated {
+        transition: 150ms ease-out;
+      }
+
+      .muted {
+        opacity: 0.7;
       }
 
       .section-heading {
         text-transform: uppercase;
-        font-size: 1.6em;
+        font-size: 1.4em;
       }
-
-      hr {
-        max-width:300px;
-      }
-
-
-      .navbar.navbar-default {
-        background: none;
-        border: none; 
-        z-index: 1;
-      }
-
-
-      .navbar-default .navbar-text {
-        color:white;
-      }
-
 
       .row-header {
-        padding: 10vh 10vw 0 10vw;
-        background-image: url('https://ik.imagekit.io/pdrkliwlk5/christopher-burns-368617-unsplash_rnLgjGzxv5UM.jpg?tr=w-1080,h-566,fo-auto');
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: cover;
-        margin-bottom:100px;
+        margin-top:30vh;
+        margin-bottom: 20vh;
         display: flex;
-        align-items: center
+        align-items: center;
       }
 
-      .header-col {
-        position: relative;
-        background: rgb(255, 255, 255);
-        border-radius: 5px;
-        box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.18);
-        bottom: -60px;
-        padding: 30px 0;
-        max-width:400px;
-        margin:auto;
+      .col-header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width:100%;
+      }
+
+      .about {
+        margin-top: 27px;
+      }
+
+      .about .location {
+        font-size:12px
+      }
+
+      .about .socialLinks i {
+        font-size:20px;
+        margin:0 2px;
+      }
+
+      .about .twitter:hover {
+        color: #1DA1F2;
+      }
+
+      .about .linkedin:hover {
+        color: #2867B2
       }
 
       .profile-pic {
@@ -96,124 +163,115 @@
         max-width: 200px;
       }
 
-      .header-col h2 {
-        font-size: 1.3em;
-        margin-bottom: 20px;
-        margin-top: 0;
-      }
-
-      .socialLinks {
-        margin-top: 20px; 
-        font-size: 18px;
-      }
-
-      .email {
-        margin-top:20px;
-      }
-
-      .email .glyphicon {
-        margin-right:5px;
-      }
-
-
       .project-img-col img {
         max-width: 250px;
         margin: auto;
       }
-
 
       .list-container {
         max-width: 600px;
         margin: auto;
       }
 
-      .techlogo {
-        width:140px;
+      .tech-items i {
+        font-size: 2em;
+        opacity: 0.5;
+        border-radius: 5px;
+        padding: 5px;
       }
 
-      .tech-item {
-        margin:10px;
-      }
-
-      .tech-item-text {
-        margin-top:10px;
-      }
-
-      .tech-item i {
-        font-size:3em;
+      .tech-items i:hover {
+        opacity: 1;
       }
 
       .tech-tool-item {
         margin-left:15px;
-        display: inline-block;;
+        display: inline-block;
       }
 
       .row-footer {
-        padding: 0vh 10vw 10vw 10vw;
-        margin-top:100px;
-        background-image: url('https://ik.imagekit.io/pdrkliwlk5/christopher-burns-368617-unsplash_rnLgjGzxv5UM.jpg?tr=w-1080,h-566,fo-auto');
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 12px;
       }
 
-      .footer-col {
-        position: relative;
-        background: rgb(255, 255, 255);
-        border-radius: 5px;
-        box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.18);
-        top: -60px;
-        padding: 50px 0;
-        max-width:400px;
-        margin:auto;
+      .row-footer p {
+        margin: 0;
       }
 
-      .btn.outline {
-        background: none;
-        padding: 12px 22px;
+      .row-footer .socialLinks {
+        margin-top: 8px;
       }
 
-      .btn-primary.outline {
-        border: 2px solid #0099cc;
-        color: #0099cc;
-        border:0;
+      .about-repo {
+        display: flex;
+        justify-content: center;  
+        flex-direction: column;
       }
 
-      .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
-        color: #33a6cc;
-        border-color: #33a6cc;
+      @media (max-width: 991px) {
+        .row.repo {
+          flex-direction: column-reverse;
+        }
+
+        .about-repo {
+          margin-top: 25px;
+        }
       }
-      .btn-primary.outline:active, .btn-primary.outline.active {
-        border-color: #007299;
-        color: #007299;
-        box-shadow: none;
+
+      /* Handle desktop */
+      @media (min-width: 768px) {  
+        .row-header .image {
+          text-align: right;
+          padding-right: 5vw;
+        }
+
+        .row-header .about {
+          text-align:left;
+          margin-top:0
+        }
+
+        .col-header {
+          flex-direction: row;
+        }
+
+        .profile-pic {
+          margin-right: 3%;
+        }
+      }
+
+
+      /* Handle dark mode */
+      @media (prefers-color-scheme: dark) {
+
       }
 
     </style>
   </head>
   <body>
 
-  <div class="container-fluid">
+  <div class="container">
 
-
-    <!-- Intro, name, tagline -->
+    <!-- Intro, name, description -->
     <div class="row text-center row-header">
-      <div class="col-xs-12">
-        <div class="header-col">
-            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQG4PXxhqtEsSw/profile-displayphoto-shrink_200_200/0/1608581951645?e&#x3D;1618444800&amp;v&#x3D;beta&amp;t&#x3D;o7cI_kpcliX-aICMX2bY7SmcAhb5P3i5Y7-ennFVYcI" alt="profile pic" class="img-responsive profile-pic center-block">
+      <div class="col col-xs-12 col-header">
+          <img src="https://media-exp1.licdn.com/dms/image/C4D03AQG4PXxhqtEsSw/profile-displayphoto-shrink_200_200/0/1608581951645?e&#x3D;1618444800&amp;v&#x3D;beta&amp;t&#x3D;o7cI_kpcliX-aICMX2bY7SmcAhb5P3i5Y7-ennFVYcI" alt="profile pic" class="img-fluid profile-pic center-block">
+        <div class="about">
           <h1>Keefe Brown</h1>
-          <h2>I am an inspired &amp; creative Software Developer, focused on delivering high quality products.  Creating unique and impressive builds, while focusing in the details and inner-workings of every task i take on.  I enjoy providing exemplary work, and going the extra mile to perfect it.  I am continuously learning and expanding my skills and abilities.   </h2>
+          <h2>ABOUT ME - I am an inspired &amp; creative Software Developer, focused on delivering high quality products.  Creating unique and impressive builds, while focusing in the details and inner-workings of every task i take on.  I enjoy providing exemplary work, and going the extra mile to perfect it.  I am continuously learning and expanding my skills and abilities.   </h2>
+          <a href="mailto:keefebrown715@gmail.com" class="email"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>keefebrown715@gmail.com</a>
+          <p style="margin-top:15px">
+            <i class="fas fa-map-marker-alt"></i> 
+            <span class="location">White Plains, NY</span>
+          </p>
           <div class="socialLinks">
-                  <a href="www.linkedin.com/in/keefe-brown-746bb9102" target="_blank">
-                      <i class="fab fa-linkedin linkedin animated"></i>
-                  </a>
+              <a href="www.linkedin.com/in/keefe-brown-746bb9102" target="_blank">
+                <i class="fab fa-linkedin linkedin animated"></i>
+              </a>
           </div>
         </div>
-        
       </div>
     </div>
-
 
 
     <!-- Projects -->
@@ -221,91 +279,93 @@
 
       <div class="row">
         <div class="col xs-12">
-          <h1 class="text-center section-heading">Work</h1>
+          <h3 class="section-heading muted">Work</h3>
+          <hr>
         </div>
       </div>
 
 
-        <div class="row">
+        <div class="row repo" style="margin-bottom:75px">
+          
+          <div class="col-lg-6 about-repo">
+            <h3>Race To Success pt1</h3>
+            <p>RACE TO SUCCESS is a money earning financial game. Its a one on one game, where both players Earn income through their designated professions, racing to the goal of $1,000,000! the players, have the ability to sabotage each other&#x27;s business, hurting their income, and run merchandise sales, to speed up the earning process. You play as the character Billy Ray Valentine, and you must beat Louis Winthorpe, to 1million dollars in order to win the home and all the money.</p>
+            <p><a href="https://api.github.com/repos/keefe14brown/project_1_marg" class="link">View</a></p>
 
-          <div class="col-sm-8 col-sm-offset-2">
-            
-            <div class="col-lg-8">
-              <img src="" alt="" class="img-responsive center-block">
+            <div class="tech-items">
+              <i class="devicon-html5-plain-wordmark colored animated"></i>
+              <i class="devicon-javascript-plain-wordmark colored animated"></i>
+              <i class="devicon-css3-plain-wordmark colored animated"></i>
             </div>
-
-            <div class="col-lg-4">
-              <h3>project_1_marg</h3>
-              <p>RACE TO SUCCESS is a money earning financial game. Its a one on one game, where both players Earn income through their designated professions, racing to the goal of $1,000,000! the players, have the ability to sabotage each other&#x27;s business, hurting their income, and run merchandise sales, to speed up the earning process. You play as the character Billy Ray Valentine, and you must beat Louis Winthorpe, to 1million dollars in order to win the home and all the money.</p>
-                <p><a href="https://api.github.com/repos/keefe14brown/project_1_marg">Launch</a></p>
-            </div>
-
-            <div class="col-xs-12 text-center tech-item">
-              <i class="devicon-html5-plain-wordmark colored"></i>
-              <i class="devicon-javascript-plain-wordmark colored"></i>
-              <i class="devicon-css3-plain-wordmark colored"></i>
-            </div>
-
+          </div>
+          
+          <div class="col-lg-6">
+            <img src="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555314673/shape/mentalfloss/tradinghed.jpg" alt="" class="img-fluid center-block">
           </div>
 
         </div>
 
-        <div class="row">
+        <div class="row repo" style="margin-bottom:75px">
+          
+          <div class="col-lg-6 about-repo">
+            <h3>Race To Success pt2</h3>
+            <p>OVERVIEW: This another version of the Trading Places, inspired game, previously built with vanilla Js. This version is built with React, and react router. the game is meant to be developed into a full RPG adventure game soon.</p>
+            <p><a href="https://api.github.com/repos/keefe14brown/Race_To_Success" class="link">View</a></p>
 
-          <div class="col-sm-8 col-sm-offset-2">
-            
-            <div class="col-lg-8">
-              <img src="" alt="" class="img-responsive center-block">
+            <div class="tech-items">
+              <i class="devicon-react-plain-wordmark colored animated"></i>
+              <i class="devicon-rails-plain-wordmark colored animated"></i>
             </div>
-
-            <div class="col-lg-4">
-              <h3>Race_To_Success</h3>
-              <p>OVERVIEW: This another version of the Trading Places, inspired game, previously built with vanilla Js. This version is built with React, and react router. the game is meant to be developed into a full RPG adventure game soon.</p>
-                <p><a href="https://api.github.com/repos/keefe14brown/Race_To_Success">Launch</a></p>
-            </div>
-
-            <div class="col-xs-12 text-center tech-item">
-              <i class="devicon-react-plain-wordmark colored"></i>
-              <i class="devicon-rails-plain-wordmark colored"></i>
-            </div>
-
+          </div>
+          
+          <div class="col-lg-6">
+            <img src="https://www.blurayauthority.com/wp-content/uploads/2018/05/tradingplaceshd_pub.png" alt="" class="img-fluid center-block">
           </div>
 
         </div>
 
-        <div class="row">
+        <div class="row repo" style="margin-bottom:75px">
+          
+          <div class="col-lg-6 about-repo">
+            <h3>photo_gallery_app</h3>
+            <p>Photo gallery app inspired and designed by/for photographer Drae4k.  Created using MERN stack</p>
+            <p><a href="https://api.github.com/repos/keefe14brown/photo_gallery_app" class="link">View</a></p>
 
-          <div class="col-sm-8 col-sm-offset-2">
-            
-            <div class="col-lg-8">
-              <img src="" alt="" class="img-responsive center-block">
+            <div class="tech-items">
+              <i class="devicon-mongodb-plain-wordmark colored animated"></i>
+              <i class="devicon-react-plain-wordmark colored animated"></i>
+              <i class="devicon-express-plain-wordmark colored animated"></i>
+              <i class="devicon-nodejs-plain-wordmark colored animated"></i>
             </div>
-
-            <div class="col-lg-4">
-              <h3>photo_gallery_app</h3>
-              <p>Photo gallery app created using MERN stack</p>
-                <p><a href="https://api.github.com/repos/keefe14brown/photo_gallery_app">Launch</a></p>
-            </div>
-
-            <div class="col-xs-12 text-center tech-item">
-            </div>
-
+          </div>
+          
+          <div class="col-lg-6">
+            <img src="data:image/jpeg;base64,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&#x3D;" alt="" class="img-fluid center-block">
           </div>
 
         </div>
-
 
     </section>
 
-  <!-- Technical Experience -->
+
+    
+    <!-- Technical Experience -->
 
 
-
-    <!-- <div class="row row-footer">
-      <div class="col footer-col text-center">
-
+    <div class="row row-footer">
+      <div class="col footer-col">
+        <hr>
+        <p><i class="far fa-copyright"></i> Keefe Brown</p>
+        <p>
+          <span class="location muted">White Plains, NY</span>
+        </p>
+        <div class="socialLinks">
+            <a href="www.linkedin.com/in/keefe-brown-746bb9102" target="_blank">
+              <i class="fab fa-linkedin linkedin animated"></i>
+            </a>
+        </div>
       </div>
-    </div> -->
+    </div>
 
   </div> <!-- end container -->
 
