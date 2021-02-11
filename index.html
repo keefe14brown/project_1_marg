@@ -1,78 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico?" type="image/x-icon">
-    <title>Race To Success</title>
-    <script defer src="app.js"></script>
-</head>
-<body>
-    <h1 class="title">
-        Race To Success
-    </h1>
-    <section>
-            <div class="PlayerOneControls">
-                <button class="gotowork">Earn Money</button>
-                <button class="buy">Buy</button> <br>
-                <button class="start-game">
-                    Start Game
-                </button> <br>
-                <button class="sabotage">Sabotage</button>
-                <button class="sale">Sale</button>
-            </div>
-            
-    </section>
-    <div>
-        <button class="resetgame" onclick="myButton()">Reset Game</button>
-        <script>
-            function myButton() {
-                location.reload();
-            }
-        </script>
-    </div>
-    <div class="carousel">
-        <h2>Choose a background</h2>
-        <button class="carousel-select">Select</button>
-        <img src="" alt="">
-        <button class="carousel-previous">Previous</button>
-    <button class="carousel-next">Next</button>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Keefe Brown | GitHub portfolio page</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/98f1672b4f.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:300,400" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/4f6a4b08efdad6bb29f9cc801f5c07e263b39907/devicon.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+      
+      h1, h2, h3, h4, h5{
+        color:#4A4E69;
+        font-weight: 300;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      p {
+        color: #4A4E69;
+        font-weight: 300;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      section {
+        width:100%;
+        margin: 40px 0;
+        padding: 0 5%;
+      }
+
+      .section-heading {
+        text-transform: uppercase;
+        font-size: 1.6em;
+      }
+
+      hr {
+        max-width:300px;
+      }
+
+
+      .navbar.navbar-default {
+        background: none;
+        border: none; 
+        z-index: 1;
+      }
+
+
+      .navbar-default .navbar-text {
+        color:white;
+      }
+
+
+      .row-header {
+        padding: 10vh 10vw 0 10vw;
+        background-image: url('https://ik.imagekit.io/pdrkliwlk5/christopher-burns-368617-unsplash_rnLgjGzxv5UM.jpg?tr=w-1080,h-566,fo-auto');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        margin-bottom:100px;
+        display: flex;
+        align-items: center
+      }
+
+      .header-col {
+        position: relative;
+        background: rgb(255, 255, 255);
+        border-radius: 5px;
+        box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.18);
+        bottom: -60px;
+        padding: 30px 0;
+        max-width:400px;
+        margin:auto;
+      }
+
+      .profile-pic {
+        border-radius:50%;
+        width:40%;
+        max-width: 200px;
+      }
+
+      .header-col h2 {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        margin-top: 0;
+      }
+
+      .socialLinks {
+        margin-top: 20px; 
+        font-size: 18px;
+      }
+
+      .email {
+        margin-top:20px;
+      }
+
+      .email .glyphicon {
+        margin-right:5px;
+      }
+
+
+      .project-img-col img {
+        max-width: 250px;
+        margin: auto;
+      }
+
+
+      .list-container {
+        max-width: 600px;
+        margin: auto;
+      }
+
+      .techlogo {
+        width:140px;
+      }
+
+      .tech-item {
+        margin:10px;
+      }
+
+      .tech-item-text {
+        margin-top:10px;
+      }
+
+      .tech-item i {
+        font-size:3em;
+      }
+
+      .tech-tool-item {
+        margin-left:15px;
+        display: inline-block;;
+      }
+
+      .row-footer {
+        padding: 0vh 10vw 10vw 10vw;
+        margin-top:100px;
+        background-image: url('https://ik.imagekit.io/pdrkliwlk5/christopher-burns-368617-unsplash_rnLgjGzxv5UM.jpg?tr=w-1080,h-566,fo-auto');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      .footer-col {
+        position: relative;
+        background: rgb(255, 255, 255);
+        border-radius: 5px;
+        box-shadow: 0 1px 10px 3px rgba(0, 0, 0, 0.18);
+        top: -60px;
+        padding: 50px 0;
+        max-width:400px;
+        margin:auto;
+      }
+
+      .btn.outline {
+        background: none;
+        padding: 12px 22px;
+      }
+
+      .btn-primary.outline {
+        border: 2px solid #0099cc;
+        color: #0099cc;
+        border:0;
+      }
+
+      .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+        color: #33a6cc;
+        border-color: #33a6cc;
+      }
+      .btn-primary.outline:active, .btn-primary.outline.active {
+        border-color: #007299;
+        color: #007299;
+        box-shadow: none;
+      }
+
+    </style>
+  </head>
+  <body>
+
+  <div class="container-fluid">
+
+
+    <!-- Intro, name, tagline -->
+    <div class="row text-center row-header">
+      <div class="col-xs-12">
+        <div class="header-col">
+            <img src="https://media-exp1.licdn.com/dms/image/C4D03AQG4PXxhqtEsSw/profile-displayphoto-shrink_200_200/0/1608581951645?e&#x3D;1618444800&amp;v&#x3D;beta&amp;t&#x3D;o7cI_kpcliX-aICMX2bY7SmcAhb5P3i5Y7-ennFVYcI" alt="profile pic" class="img-responsive profile-pic center-block">
+          <h1>Keefe Brown</h1>
+          <h2>I am an inspired &amp; creative Software Developer, focused on delivering high quality products.  Creating unique and impressive builds, while focusing in the details and inner-workings of every task i take on.  I enjoy providing exemplary work, and going the extra mile to perfect it.  I am continuously learning and expanding my skills and abilities.   </h2>
+          <div class="socialLinks">
+                  <a href="www.linkedin.com/in/keefe-brown-746bb9102" target="_blank">
+                      <i class="fab fa-linkedin linkedin animated"></i>
+                  </a>
+          </div>
+        </div>
+        
+      </div>
     </div>
 
-    <div class="modal1">
-        <p>
-            Infamous Finance giants, Randolph and Mortimer Duke are the richest men in America.<br>
-            They often find themselves bored with dominating the world through investments and finance. <br> 
-            One day Mortimer has an exciting idea.......
-        </p>
-        <button class="continue1">continue</button>
-    </div>
-    <div class="modal2">
-        <p>
-            MORTIMER: "Randolph! RANDOLPH!!! Lets play a game!"<br>
-            RANDOLPH: "I'm listening Mortimer."<br>
-            MORTIMER: "Let's find 2 people, broke and struggling, and kickstart their careers."<br>
-            One honest person and one crook...just see what happens, see what they do with it!"<br>
-            RANDOLPH: "Brilliant idea Mortimer! I have an idea as well my good sir. <br> 
-            The first to earn 1 million dollars, will be the winner! <br>
-            The prize will be the <span style="color:red; font-weight: 700;">Waldorf Mansion & All the money earned</span>!!!"<br>
-            Mortimer: "I know exactly where to find our guys......."
-        </p>
-        <button class="continue2">continue</button>
-    </div>
-    <div class="modal3">
-        <h2>The Path To Success<br>
-        Starts Here!</h2>
-        <button class=workbutton>Get Started</button>
-    </div>
-   <div class="playeronearea">
-    <div id="JoeSchmoe"></div>
-    <div> </div>
-    <div id="SketchyTodd"></div>
-   </div>
-</body>
-<div class="background-music">
-    <iframe width="325" height="175" src="https://www.youtube.com/embed/f1CKfBiDlfk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+
+
+    <!-- Projects -->
+    <section style="margin-top:0">
+
+      <div class="row">
+        <div class="col xs-12">
+          <h1 class="text-center section-heading">Work</h1>
+        </div>
+      </div>
+
+
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+            
+            <div class="col-lg-8">
+              <img src="" alt="" class="img-responsive center-block">
+            </div>
+
+            <div class="col-lg-4">
+              <h3>project_1_marg</h3>
+              <p>RACE TO SUCCESS is a money earning financial game. Its a one on one game, where both players Earn income through their designated professions, racing to the goal of $1,000,000! the players, have the ability to sabotage each other&#x27;s business, hurting their income, and run merchandise sales, to speed up the earning process. You play as the character Billy Ray Valentine, and you must beat Louis Winthorpe, to 1million dollars in order to win the home and all the money.</p>
+                <p><a href="https://api.github.com/repos/keefe14brown/project_1_marg">Launch</a></p>
+            </div>
+
+            <div class="col-xs-12 text-center tech-item">
+              <i class="devicon-html5-plain-wordmark colored"></i>
+              <i class="devicon-javascript-plain-wordmark colored"></i>
+              <i class="devicon-css3-plain-wordmark colored"></i>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+            
+            <div class="col-lg-8">
+              <img src="" alt="" class="img-responsive center-block">
+            </div>
+
+            <div class="col-lg-4">
+              <h3>Race_To_Success</h3>
+              <p>OVERVIEW: This another version of the Trading Places, inspired game, previously built with vanilla Js. This version is built with React, and react router. the game is meant to be developed into a full RPG adventure game soon.</p>
+                <p><a href="https://api.github.com/repos/keefe14brown/Race_To_Success">Launch</a></p>
+            </div>
+
+            <div class="col-xs-12 text-center tech-item">
+              <i class="devicon-react-plain-wordmark colored"></i>
+              <i class="devicon-rails-plain-wordmark colored"></i>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+            
+            <div class="col-lg-8">
+              <img src="" alt="" class="img-responsive center-block">
+            </div>
+
+            <div class="col-lg-4">
+              <h3>photo_gallery_app</h3>
+              <p>Photo gallery app created using MERN stack</p>
+                <p><a href="https://api.github.com/repos/keefe14brown/photo_gallery_app">Launch</a></p>
+            </div>
+
+            <div class="col-xs-12 text-center tech-item">
+            </div>
+
+          </div>
+
+        </div>
+
+
+    </section>
+
+  <!-- Technical Experience -->
+
+
+
+    <!-- <div class="row row-footer">
+      <div class="col footer-col text-center">
+
+      </div>
+    </div> -->
+
+  </div> <!-- end container -->
+
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+
+  </body>
 </html>
